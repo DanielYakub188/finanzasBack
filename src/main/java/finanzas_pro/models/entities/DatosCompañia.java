@@ -32,7 +32,7 @@ public class DatosCompañia {
     @Column(name = "industria", length = 100)
     private String industria;
 
-    @Column(name = "país", length = 100)
+    @Column(name = "pais", length = 100)
     private String pais;
 
     @Column(name = "empleados")
