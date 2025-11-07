@@ -32,7 +32,7 @@ public class DatosCompañia {
     @Column(name = "industria", length = 100)
     private String industria;
 
-    @Column(name = "pais", length = 100)
+    @Column(name = "país", length = 100)
     private String pais;
 
     @Column(name = "empleados")
@@ -47,6 +47,7 @@ public class DatosCompañia {
     @Temporal(TemporalType.DATE)
     @Column(name = "fecha_Ipo")
     private Date fechaIpo;
+
 
     public String getCompanySymbol() {
         return companySymbol;
@@ -143,4 +144,5 @@ public class DatosCompañia {
     public void setFechaIpo(Date fechaIpo) {
         this.fechaIpo = fechaIpo;
     }
+
 }

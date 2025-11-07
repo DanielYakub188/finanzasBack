@@ -1,9 +1,14 @@
 package finanzas_pro.services;
 
+import finanzas_pro.models.entities.DatosCompañia;
 import finanzas_pro.repositories.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -41,7 +46,7 @@ public class ConsultaService {
      * Consulta empresas según pais, sector o industria
      */
 
-    /*
+
     public List<Map<String, Object>> consultarEmpresasPaisSectorIndustria(
             List<String> paises,
             List<String> sectores,
@@ -149,7 +154,7 @@ public class ConsultaService {
 
         return resultados;
     }
-*/
+
 
     /**
      * Cuenta el número total de resultados según país(es) y/o sector(es)

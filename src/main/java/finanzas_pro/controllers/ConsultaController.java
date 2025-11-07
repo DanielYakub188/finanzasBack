@@ -2,8 +2,6 @@ package finanzas_pro.controllers;
 
 import finanzas_pro.services.ConsultaService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,8 +17,9 @@ public class ConsultaController {
     @Autowired
     private ConsultaService consultaService;
 
+
     @GetMapping("/extendida")
-    public ResponseEntity<Page<EmpresaExtendidaProjection>> consultarPaisSectorIndustria(
+    public List<Map<String, Object>> consultarPaisSectorIndustria(
             @RequestHeader(value = "paises", required = false) List<String> paises,
             @RequestHeader(value = "sectores", required = false) List<String> sectores,
             @RequestHeader(value = "industrias", required = false) List<String> industrias,
@@ -28,10 +27,8 @@ public class ConsultaController {
             @RequestHeader(value = "ordenarPor", required = false) String ordenarPor,
             @RequestHeader(value = "direccionOrden", required = false) String direccionOrden
     ) {
-        Page<EmpresaExtendidaProjection> resultados =
-                consultaService.consultarEmpresasPaisSectorIndustria(paises, sectores, industrias, page, ordenarPor, direccionOrden);
-
-        return ResponseEntity.ok(resultados);
+        List<Map<String, Object>> resultados = consultaService.consultarEmpresasPaisSectorIndustria(paises, sectores, industrias, page, ordenarPor, direccionOrden);
+        return resultados;
     }
 
     @GetMapping("/count")
