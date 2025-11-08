@@ -39,6 +39,7 @@ public class ConsultaController {
         return consultaService.consultarNumeroDeResultados(paises, sectores, industrias);
     }
 
+    //A
     @GetMapping("/lista-datos")
     public Map<String, List<String>> recogerDatos() {
         Map<String, List<String>> listaDatos = consultaService.recogerPaisesIndustriasYSectoresDisponibles();
